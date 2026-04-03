@@ -51,30 +51,30 @@ The key idea in one sentence:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    GRPO Training Loop                    │
+│                    GRPO Training Loop                   │
 │                                                         │
-│  Game State  ──►  Prompt  ──►  Qwen-3-0.6B (Policy)    │
+│  Game State  ──►  Prompt  ──►  Qwen-3-0.6B (Policy)     │
 │                               │                         │
 │                         Generate N=8                    │
 │                         completions                     │
 │                               │                         │
 │              ┌────────────────┴──────────────────┐      │
-│              │  Reward Functions (Rule-Based)     │      │
-│              │  1. valid_move_reward()            │      │
-│              │  2. format_reward()                │      │
-│              │  3. strategy_reward()              │      │
+│              │  Reward Functions (Rule-Based)    │      │
+│              │  1. valid_move_reward()           │      │
+│              │  2. format_reward()               │      │
+│              │  3. strategy_reward()             │      │
 │              └────────────────┬──────────────────┘      │
 │                               │                         │
 │                    Scores: [0.9, 0.2, 1.0, ...]         │
 │                               │                         │
-│                    Z-score normalize → Advantages        │
+│                    Z-score normalize → Advantages       │
 │                               │                         │
 │              ┌────────────────┴──────────────────┐      │
 │              │  GRPO Loss (clipped policy ratio  │      │
-│              │  + KL divergence penalty)          │      │
+│              │  + KL divergence penalty)         │      │
 │              └────────────────┬──────────────────┘      │
 │                               │                         │
-│                    Update model weights (LoRA)           │
+│                    Update model weights (LoRA)          │
 └─────────────────────────────────────────────────────────┘
 ```
 
