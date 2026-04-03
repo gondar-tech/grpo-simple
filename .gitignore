@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+liars_dice_dataset/
+wandb/
+qwen3-0.6b-liars-dice-grpo/
+
+.env
