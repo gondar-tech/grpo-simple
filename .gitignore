@@ -1,5 +1,6 @@
 venv/
 __pycache__/
+.ipynb_checkpoints/
 liars_dice_dataset/
 wandb/
 qwen3-0.6b-liars-dice-grpo/
